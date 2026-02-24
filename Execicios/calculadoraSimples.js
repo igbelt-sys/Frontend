@@ -63,6 +63,6 @@ while (continuar) {
   let escolha = prompt("1 continuar | 2 sair: ");
   if (escolha === "2") {
     continuar = false;
-    console.log("Saindo...");
+    console.log("saindo...");
   }
 }
