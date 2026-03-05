@@ -1,0 +1,15 @@
+li {
+    display:flex;
+    justify-content: space-between;
+    background-color: lightblue;
+    margin: 5px;
+    border-radius: 5px;
+
+}
+.btnRemove{
+    background-color: red;
+    padding: 6px 10px;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
+}
