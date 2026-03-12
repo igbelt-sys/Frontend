@@ -80,7 +80,7 @@ function mostrarSequencia() {
   }, 800);
 }
 
-// faz o botao piscar
+// faz o botao piscar'
 function piscarBotao(cor) {
   const botao = document.querySelector(`[data-cor="${cor}"]`);
 
