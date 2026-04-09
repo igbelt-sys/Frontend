@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Galeria de Imagens Dinâmicas</h1>
-        <input type="text" name="" id="upload" placeholder="Insira a URL da Imagem">
-        <button id="addImagem">Adicionar Imagem</button>
-    </div>
-    <!-- montar o carrosel -->
-     <div class="carroselContainer">
-        <div class="carrossel">
+    <main class="container">
+        <h1>Galeria de Imagens Dinamicas</h1>
+        <p class="descricao">Adicione links de imagens para montar um pequeno carrossel e uma galeria com miniaturas.</p>
 
+        <div class="formulario">
+            <input type="text" id="upload" placeholder="Insira a URL da imagem">
+            <button id="addImagem">Adicionar Imagem</button>
         </div>
-     </div>
 
-     <!-- montar o grid de imagens -->
-      <div class="galeria"></div>
+        <section class="painel">
+            <h2>Carrossel</h2>
+            <div class="carrosselContainer">
+                <div class="carrossel"></div>
+            </div>
+        </section>
+
+        <section class="painel">
+            <h2>Galeria</h2>
+            <div class="galeria"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
