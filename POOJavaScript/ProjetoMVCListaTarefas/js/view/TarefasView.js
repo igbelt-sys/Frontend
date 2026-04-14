@@ -1,27 +1,57 @@
-// classse para organização da interfaca da aplicação
-
-
-export class TrefasView{
-    constructor(){
-        this.tarefaInput = document.getElementById("tarefaInput")//entrada de dados da nova tarefa
-        this.addTarefaBtn = document.getElementById("addTarefaBtn")//botao para adicionar a tarefa
-        this.listaTarefas = document.getElementById("listaTarefas") //ul para aas tarefas
-        this.mensagem = document.getElementById("mensagem")// p para mensagem
+export class TarefaView {
+    constructor() {
+        this.tarefaInput = document.getElementById("tarefaInput");
+        this.addTarefaBtn = document.getElementById("addTarefaBtn");
+        this.listaTarefas = document.getElementById("listaTarefas");
+        this.mensagem = document.getElementById("mensagem");
     }
-    //metodos
-    getTarefasInputValue(){
+
+    getTarefaInputValue() {
         return this.tarefaInput.value.trim();
     }
-    // limpar valor do Imput
-    clearInput(){
-        this.tarefaInput = ""
+
+    clearInput() {
+        this.tarefaInput.value = "";
     }
-    showMensagem(texto){
+
+    showMensagem(texto) {
         this.mensagem.textContent = texto;
     }
-    clearMensagem(){
+
+    clearMensagem() {
         this.mensagem.textContent = "";
     }
-    //renderizar a lista de tarefas
-    
+
+    renderTarefa(tarefas, atualizar, remover) {
+        this.listaTarefas.innerHTML = "";
+
+        tarefas.forEach((tarefa) => {
+            const li = document.createElement("li");
+            if (tarefa.completed) {
+                li.classList.add("completed");
+            }
+
+            const span = document.createElement("span");
+            span.textContent = tarefa.titulo;
+
+            const action = document.createElement("div");
+            action.classList.add("action");
+
+            const atualizarBtn = document.createElement("button");
+            atualizarBtn.textContent = tarefa.completed ? "Desfazer" : "Concluir";
+            atualizarBtn.addEventListener("click", () => atualizar(tarefa.id));
+
+            const removerBtn = document.createElement("button");
+            removerBtn.textContent = "Remover";
+            removerBtn.addEventListener("click", () => remover(tarefa.id));
+
+            action.appendChild(atualizarBtn);
+            action.appendChild(removerBtn);
+
+            li.appendChild(span);
+            li.appendChild(action);
+
+            this.listaTarefas.appendChild(li);
+        });
+    }
 }
